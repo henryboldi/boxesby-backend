@@ -46,7 +46,7 @@ class Order extends CI_Controller {
 			$id = $row->id; 
 
 			$args = array(
-			    'sid' => 1817037,
+			    'sid' => 102177163,
 			    'mode' => "2CO",
 			    'li_0_name' => "Monthly Subscription",
 			    'li_0_price' => "1.00",
