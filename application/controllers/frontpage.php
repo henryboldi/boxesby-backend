@@ -7,11 +7,11 @@ class Frontpage extends CI_Controller {
       $this->load->view('include/header');
 	  if (!$this->ion_auth->logged_in())
 	  {
-		$this->load->view('include/navlogin');
+		// $this->load->view('include/navlogin');
 	  }
 	  else
 	  {
-	  	$this->load->view('include/navbar');
+	  	// $this->load->view('include/navbar');
 	  }
       $this->load->view('frontpage');
       $this->load->view('include/footer');
@@ -26,8 +26,8 @@ class Frontpage extends CI_Controller {
 	  }
 	  else
 	  {
-	  	$this->load->view('include/header');
-	  	$this->load->view('include/navbar');
+	  	// $this->load->view('include/header');
+	  	// $this->load->view('include/navbar');
 	  	$this->load->view('content');
         $this->load->view('include/footer');
 	  }

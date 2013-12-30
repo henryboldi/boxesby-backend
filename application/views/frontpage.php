@@ -9,13 +9,24 @@
             <li><a href="mailto:box@boxesby.com?subject=Request to Curate a Box&body=#please include your twitter handle">make a box</a></li>
             <li><a href="signin.html">login</a></li>
             <li><a href="signup.html">sign up</a></li>
+            <li>
+              <?php $this->load->view('include/header');
+              if (!$this->ion_auth->logged_in())
+              {
+               echo "You must login.";
+              }
+              else
+              {
+                echo "Logged in.";
+              } ?>
+            </li>
             <li><p><a class="btn btn-primary btn-large" href="<?php echo site_url().'/order/register' ?>">Signup</a></p></li>
           </ul>     
         </div>
       </div>
   
       
-      <div class="row">
+          <div class="row">
         <div class="col-md-12">
           <h1 class="tagline">Get stuff monthly from people you follow while supporting charities.</h1>
         </div>
@@ -26,33 +37,41 @@
         <div class="col-md-2 col-md-offset-2">
           <a href="hackathonsuperpowers.html">
             <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-            <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
-            <h4 class="namesubtag">by Dave Fontenot</h4>
-            <p class="homeprice">$19/m</p>
+            <div class="description">
+              <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+              <h4 class="namesubtag">by Dave Fontenot</h4>
+              <p class="homeprice">$19/m</p>
+            </div>
           </a>
         </div>
         <div class="col-md-2">
           <a href="tracymcgrady.html">
             <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-            <h3 class="featured-box-subtitle">Something Basketball?</h3>
-            <h4 class="namesubtag">by Tracy McGrady</h4>
+            <div class="description">
+              <h3 class="featured-box-subtitle">Something Basketball?</h3>
+              <h4 class="namesubtag">by Tracy McGrady</h4>
             <p class="homeprice">$19/m</p>
+            </div>
           </a>
         </div>
         <div class="col-md-2">
           <a href="hackathonsuperpowers.html">
             <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-            <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
-            <h4 class="namesubtag">by Dave Fontenot</h4>
-            <p class="homeprice">$19/m</p>
+            <div class="description">
+              <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+              <h4 class="namesubtag">by Dave Fontenot</h4>
+              <p class="homeprice">$19/m</p>
+            </div>
           </a>
         </div>
         <div class="col-md-2">
           <a href="tracymcgrady.html">
             <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-            <h3 class="featured-box-subtitle">Something Basketball?</h3>
-            <h4 class="namesubtag">by Tracy McGrady</h4>
+            <div class="description">
+              <h3 class="featured-box-subtitle">Something Basketball?</h3>
+              <h4 class="namesubtag">by Tracy McGrady</h4>
             <p class="homeprice">$19/m</p>
+            </div>
           </a>
         </div>
 
@@ -67,44 +86,48 @@
       </div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle categories" data-toggle="dropdown">
-            <span class="caret"></span> categories 
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">add categories here</a></li>
-            <li><a href="#">add categories here</a></li>
-            <li><a href="#">add categories here</a></li>
-          </ul>
-        </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle categories" data-toggle="dropdown">
+          <span class="caret"></span> categories 
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">add categories here</a></li>
+          <li><a href="#">add categories here</a></li>
+          <li><a href="#">add categories here</a></li>
+        </ul>
       </div>
       <div class="row">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table homepage">
             <tr>
               <td>
                 <a href="hackathonsuperpowers.html">
                   <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Hackathon Superpowers</h3>
-                  <h4 class="box-curator">by Dave Fontenot</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+                    <h4 class="namesubtag">by Dave Fontenot</h4>
+                    <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="tracymcgrady.html">
                   <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Something Basketball?</h3>
-                  <h4 class="box-curator">by Tracy McGrady</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Something Basketball?</h3>
+                    <h4 class="namesubtag">by Tracy McGrady</h4>
+                  <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="hackathonsuperpowers.html">
                   <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Hackathon Superpowers</h3>
-                  <h4 class="box-curator">by Dave Fontenot</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+                    <h4 class="namesubtag">by Dave Fontenot</h4>
+                    <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
             </tr>
@@ -112,25 +135,31 @@
               <td>
                 <a href="tracymcgrady.html">
                   <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Something Basketball?</h3>
-                  <h4 class="box-curator">by Tracy McGrady</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Something Basketball?</h3>
+                    <h4 class="namesubtag">by Tracy McGrady</h4>
+                  <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="hackathonsuperpowers.html">
                   <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Hackathon Superpowers</h3>
-                  <h4 class="box-curator">by Dave Fontenot</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+                    <h4 class="namesubtag">by Dave Fontenot</h4>
+                    <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="tracymcgrady.html">
                   <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Something Basketball?</h3>
-                  <h4 class="box-curator">by Tracy McGrady</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Something Basketball?</h3>
+                    <h4 class="namesubtag">by Tracy McGrady</h4>
+                  <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
             </tr>
@@ -138,25 +167,31 @@
               <td>
                 <a href="hackathonsuperpowers.html">
                   <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Hackathon Superpowers</h3>
-                  <h4 class="box-curator">by Dave Fontenot</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+                    <h4 class="namesubtag">by Dave Fontenot</h4>
+                    <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="tracymcgrady.html">
                   <img src="<?php echo base_url('assets/img/tracymcgrady.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Something Basketball?</h3>
-                  <h4 class="box-curator">by Tracy McGrady</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Something Basketball?</h3>
+                    <h4 class="namesubtag">by Tracy McGrady</h4>
+                  <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
               <td>
                 <a href="hackathonsuperpowers.html">
                   <img src="<?php echo base_url('assets/img/dave.png'); ?>" alt="" class="avatar">
-                  <h3 class="box-subtitle">Hackathon Superpowers</h3>
-                  <h4 class="box-curator">by Dave Fontenot</h4>
-                  <p class="box-price">$19/m</p>
+                  <div class="description">
+                    <h3 class="featured-box-subtitle">Hackathon Superpowers</h3>
+                    <h4 class="namesubtag">by Dave Fontenot</h4>
+                    <p class="homeprice">$19/m</p>
+                  </div>
                 </a>
               </td>
             </tr>
