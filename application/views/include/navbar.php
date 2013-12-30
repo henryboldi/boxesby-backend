@@ -1,7 +1,7 @@
 <div class="row title">
     <div class="row">
       <div class="centernav">
-        <a id="rotator" href="index.html">
+        <a id="rotator" href="/">
           <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="BoxesBy" class="logo">
         </a>
         <ul class="nav nav-pills">

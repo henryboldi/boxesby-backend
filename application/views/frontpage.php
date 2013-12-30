@@ -7,17 +7,20 @@
           <ul class="nav nav-pills">
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="mailto:box@boxesby.com?subject=Request to Curate a Box&body=#please include your twitter handle">make a box</a></li>
-            <li><a href="signin.html">login</a></li>
-            <li><a href="signup.html">sign up</a></li>
             <li>
               <?php $this->load->view('include/header');
               if (!$this->ion_auth->logged_in())
               {
-               echo "You must login.";
+               echo '<li><a href="/auth/login">login</a></li>';
               }
               else
               {
-                echo "Logged in.";
+                echo '
+                      <li><a href="'.site_url().'/auth/logout">Logout</a></li>
+                      <li><a href="'.site_url().'/auth/change_password">Change Password</a></li>
+                      <li><a href="'.site_url().'/order/update">Update Billing Information</a></li>
+                      <li><a href="'.site_url().'/order/cancel">Cancel Account</a></li>
+                   ';
               } ?>
             </li>
             <li><p><a class="btn btn-primary btn-large" href="<?php echo site_url().'/order/register' ?>">Signup</a></p></li>
