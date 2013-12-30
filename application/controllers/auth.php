@@ -99,6 +99,7 @@ class Auth extends CI_Controller {
 			);
 
 			$this->load->view('auth/login', $this->data);
+			$this->load->view('/include/footer');
 		}
 	}
 
