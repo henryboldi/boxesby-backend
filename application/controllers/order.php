@@ -45,14 +45,31 @@ class Order extends CI_Controller {
 			$row = $query->row();
 			$id = $row->id; 
 
-			$args = array(
-			    'sid' => 102177163,
-			    'mode' => "2CO",
-			    'li_0_name' => "Monthly Subscription",
-			    'li_0_price' => "1.00",
-			    'li_0_recurrence' => "1 Month",
-			    'merchant_order_id' => $id
-			);
+			$box_uri = $this->uri->segment(3);
+
+			$boxes = array
+			(
+				"dave"=>array
+				(
+					'sid' => 102177163,
+				    'mode' => "2CO",
+				    'li_0_name' => "BoxesBy Dave Fontenot - Monthly Subscription",
+				    'li_0_price' => "19.00",
+				    'li_0_recurrence' => "1 Month",
+				    'merchant_order_id' => $id
+				),
+				"tracy"=>array
+				(
+					'sid' => 102177163,
+				    'mode' => "2CO",
+				    'li_0_name' => "BoxesBy Tracy McGrady - Monthly Subscription",
+				    'li_0_price' => "19.00",
+				    'li_0_recurrence' => "1 Month",
+				    'merchant_order_id' => $id
+				)
+			); 
+
+			$args = $boxes[$box_uri];
 			Twocheckout_Charge::redirect($args);
 
 		}
@@ -98,6 +115,50 @@ class Order extends CI_Controller {
 	  	$this->load->view('/include/navblank');
 	  	$this->load->view('/order/register', $this->data);
         $this->load->view('/include/footer');
+	}
+
+	function make_new()
+	{
+		$box_uri = $this->uri->segment(3);
+		$this->load->view('include/header');
+              if (!$this->ion_auth->logged_in())
+              {
+               redirect('order/register/'.$box_uri);
+              }
+              else
+              {
+                //continue
+                $this->session->set_flashdata('message', $this->ion_auth->messages());
+
+				//get user id
+				$id = $this->ion_auth->get_user_id(); 
+
+				$boxes = array
+				(
+					"dave"=>array
+					(
+						'sid' => 102177163,
+					    'mode' => "2CO",
+					    'li_0_name' => "BoxesBy Dave Fontenot - Monthly Subscription",
+					    'li_0_price' => "19.00",
+					    'li_0_recurrence' => "1 Month",
+					    'merchant_order_id' => $id
+					),
+					"tracy"=>array
+					(
+						'sid' => 102177163,
+					    'mode' => "2CO",
+					    'li_0_name' => "BoxesBy Tracy McGrady - Monthly Subscription",
+					    'li_0_price' => "19.00",
+					    'li_0_recurrence' => "1 Month",
+					    'merchant_order_id' => $id
+					)
+				); 
+
+				$args = $boxes[$box_uri];
+				Twocheckout_Charge::redirect($args);
+              }
+		
 	}
 
 	public function passback()
