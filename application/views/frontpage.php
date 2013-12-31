@@ -16,10 +16,18 @@
               else
               {
                 echo '
-                      <li><a href="'.site_url().'/auth/logout">Logout</a></li>
-                      <li><a href="'.site_url().'/auth/change_password">Change Password</a></li>
-                      <li><a href="'.site_url().'/order/update">Update Billing Information</a></li>
-                      <li><a href="'.site_url().'/order/cancel">Cancel Account</a></li>
+
+                <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="'.site_url().'/auth/logout">Logout</a></li>
+    <li><a href="'.site_url().'/auth/change_password">Change Password</a></li>
+    <li><a href="'.site_url().'/order/update">Update Billing Information</a></li>
+    <li><a href="'.site_url().'/order/cancel">Cancel Account</a></li>
+  </ul>
+</div>
                    ';
               } ?>
             </li>
